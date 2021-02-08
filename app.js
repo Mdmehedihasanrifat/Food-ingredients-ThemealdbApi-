@@ -9,9 +9,11 @@ let meal=0;
 
 document.getElementById('Search').addEventListener('click',function () {
     let Food = document.getElementById('Food').value;
-if(Food=='' ||isNaN(Food)){
 
+    console.log(Food);
+if(Food==''){
 
+console.log(Food);
     alert("Enter Proper Value");
 }
 else {
@@ -99,6 +101,17 @@ const FoodDAta = data => {
             console.log(food[`strIngredient${i}`]);
             li.innerHTML=food[`strIngredient${i}`]
             ul.appendChild(li);
+        //     const showDetails=`    <div class="card" style="width:50%;">
+        // <img src="${food['strMealThumb']}" class="card-img-top" alt="...">
+        // <div class="card-body">
+        //     <h5 class="card-title">${food['strMeal']}</h5>
+        //
+        // </div>
+        // <ul class="list-group list-group-flush">
+        //     <li class="list-group-item">${food[`strIngredient${i}`]}</li>
+        //
+        // </ul> `;
+        //     div.appendChild(showDetails);
 
         } else {
 
@@ -111,6 +124,18 @@ const FoodDAta = data => {
 
 }
 
+
+// const showDetails=`    <div class="card" style="width:50%;">
+//         <img src="${food['strMealThumb']}" class="card-img-top" alt="...">
+//         <div class="card-body">
+//             <h5 class="card-title">${food['strMeal']}</h5>
+//
+//         </div>
+//         <ul class="list-group list-group-flush">
+//             <li class="list-group-item">${food[`strIngredient${i}`]}</li>
+//
+//         </ul>
+//      `
 
 
 
