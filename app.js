@@ -93,49 +93,58 @@ const FoodDAta = data => {
     let food = data["meals"][0];
 
     console.log(food);
-    const ingredients = [];
+    let foodThumb=food['strMealThumb'];
+    let title=food['strMeal'];
+
+    const  showA=document.createElement('div');
+
+    const showInfo=`
+                <div class="row row-cols-12 align-items-center justify-content-center ">
+
+                      <div class="card m-5"  id="ImageClick" style="width: 18rem;">
+                            <img src="${foodThumb}" class="card-img-top" alt="...">
+                           <div class="card-body">
+                         <h5 class="card-title">${title}</h5>
+
+                   </div>
+                   </div>
+               </div>
+
+
+                    `
+    ;
+    showA.innerHTML=showInfo;
+    div.appendChild(showA);
+
+
+
+
+
+
+    let h3=document.createElement('h3');
+    h3.innerHTML=food['strMeal'];
     for (let i = 1; i <= 20; i++) {
 
-        let li=document.createElement('li');
+
+let li=document.createElement('li');
         if (food[`strIngredient${i}`]) {
             console.log(food[`strIngredient${i}`]);
             li.innerHTML=food[`strIngredient${i}`]
             ul.appendChild(li);
-        //     const showDetails=`    <div class="card" style="width:50%;">
-        // <img src="${food['strMealThumb']}" class="card-img-top" alt="...">
-        // <div class="card-body">
-        //     <h5 class="card-title">${food['strMeal']}</h5>
-        //
-        // </div>
-        // <ul class="list-group list-group-flush">
-        //     <li class="list-group-item">${food[`strIngredient${i}`]}</li>
-        //
-        // </ul> `;
-        //     div.appendChild(showDetails);
+
 
         } else {
 
             break;
         }
     }
+    div.appendChild(h3);
     div.appendChild(ul);
 
 
 
 }
 
-
-// const showDetails=`    <div class="card" style="width:50%;">
-//         <img src="${food['strMealThumb']}" class="card-img-top" alt="...">
-//         <div class="card-body">
-//             <h5 class="card-title">${food['strMeal']}</h5>
-//
-//         </div>
-//         <ul class="list-group list-group-flush">
-//             <li class="list-group-item">${food[`strIngredient${i}`]}</li>
-//
-//         </ul>
-//      `
 
 
 
