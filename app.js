@@ -41,10 +41,10 @@ const displayData=data=>{
         const  show=document.createElement('div');
 
         const showInfo=`
-                <div class="row row-cols-3">
+                <div class="row row-cols-3" >
 
                       <div class="card m-5" onclick="displayDetail('${name}')" id="ImageClick" style="width: 18rem;">
-                            <img src="${image}" class="card-img-top" alt="...">
+                            <img src="${image}" class="card-img-top img-fluid" alt="...">
                            <div class="card-body">
                          <h5 class="card-title">${name}</h5>
 
@@ -87,7 +87,6 @@ const FoodDAta = data => {
     document.getElementById('Details').style.display="block";
     let ul=document.getElementById('ingrade');
     let div=document.getElementById('Details');
-
     show.style.display='none';
 
     let food = data["meals"][0];
@@ -99,10 +98,10 @@ const FoodDAta = data => {
     const  showA=document.createElement('div');
 
     const showInfo=`
-                <div class="row row-cols-12 align-items-center justify-content-center ">
+                <div class="row row-cols-12 align-items-center justify-content-center" >
 
-                      <div class="card m-5"  id="ImageClick" style="width: 18rem;">
-                            <img src="${foodThumb}" class="card-img-top" alt="...">
+                      <div class="card m-5"  id="ImageClick" style="width: 18rem; padding: 2%">
+                            <img src="${foodThumb}" class="card-img-top img-fluid img-responsive align-items-center" alt="...">
                            <div class="card-body">
                          <h5 class="card-title">${title}</h5>
 
@@ -127,6 +126,7 @@ const FoodDAta = data => {
 
 
 let li=document.createElement('li');
+
         if (food[`strIngredient${i}`]) {
             console.log(food[`strIngredient${i}`]);
             li.innerHTML=food[`strIngredient${i}`]
